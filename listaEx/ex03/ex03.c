@@ -3,29 +3,36 @@
 
 int main() {
     float n[8];
-    float maior = 0;
-    float menor;
-    int indiceM;
-    int indice;
+    float maior, menor;
+    int indiceMaior, indiceMenor;
     int i;
 
     for (i = 0; i <= 7; i++) {
         printf("Digite o %d numero: ", i + 1);
         scanf("%f", &n[i]);
 
+    }
+
+    maior = n[0];
+    menor = n[0];
+    indiceMaior = 0;
+    indiceMenor = 0;
+
+    for (i = 0; i<= 7; i++) {
         if (n[i] > maior) {
             maior = n[i];
-            indiceM = i;
+            indiceMaior = i;
         }
 
         if (n[i] < menor) {
             menor = n[i];
-            indice = i;
+            indiceMenor = i;
         }
     }
+        
 
-    printf("O maior numero digitado foi: %f \n", maior);
-    printf("O menor numero digitado foi: %f \n", menor);
+    printf("O maior numero digitado foi: %.2f indice: %d \n", maior, indiceMaior);
+    printf("O menor numero digitado foi: %.2f indice: %d \n", menor, indiceMenor);
 
     return 0;
 }
